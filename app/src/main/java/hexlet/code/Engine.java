@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static void gameLogic (String requirement,String[] questions, String[] rightAnswers) {
+    public static void gameLogic(String requirement, String[] questions, String[] rightAnswers) {
 
         byte counterRightAnswer = 0;
         Scanner input = new Scanner(System.in);
