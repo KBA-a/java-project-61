@@ -7,29 +7,56 @@ public class Games {
 
     public static void even() {
 
-        Scanner input = new Scanner(System.in);
-        byte counterRightAnswer = 0;
-        String answer;
+        String[] questions = new String[3];
+        String[] rightAnswers = new String[3];
+        int randomNumber;
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String userName = input.nextLine();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        do {
-            int randomNumber = RandomUtils.nextInt(1, 100);
-            System.out.println("Question: " + randomNumber);
-            System.out.print("Your answer: ");
-            answer = input.nextLine();
-            if ((randomNumber % 2 == 0 && answer.equalsIgnoreCase("yes"))
-                    || (randomNumber % 2 != 0 && answer.equalsIgnoreCase("no"))) {
-                counterRightAnswer++;
-                System.out.println("Correct!");
-            } else {
-                System.out.println("Wrong!\nEnd game!");
-                return;
+        for (int i = 0; i < 3; i++) {
+            randomNumber = RandomUtils.nextInt(0, 100);
+            questions[i] = randomNumber + "";
+            if (randomNumber % 2 == 0)
+                rightAnswers[i] = "yes";
+             else
+                rightAnswers[i] = "no";
+        }
+        Engine.gameLogic("Answer 'yes' if the number is even, otherwise answer 'no'",
+                questions, rightAnswers);
+
+    }
+
+    public static void Calc() {
+
+        Scanner input = new Scanner(System.in);
+        int firstNumber;
+        int secondNumber;
+        String[] questions = new String[3];
+        String[] rightAnswers = new String[3];
+
+        for (int i = 0; i < 3; i++) {
+            switch (RandomUtils.nextInt(0, 3)) {
+                case 0: {
+                    firstNumber = RandomUtils.nextInt(0, 100);
+                    secondNumber = RandomUtils.nextInt(0, 100);
+                    questions[i] = firstNumber + " + " + secondNumber;
+                    rightAnswers[i] = firstNumber + secondNumber + "";
+                    break;
+                }
+                case 1: {
+                    firstNumber = RandomUtils.nextInt(0, 100);
+                    secondNumber = RandomUtils.nextInt(0, 100);
+                    questions[i] = firstNumber + " - " + secondNumber;
+                    rightAnswers[i] = firstNumber - secondNumber + "";
+                    break;
+                }
+                case 2: {
+                    firstNumber = RandomUtils.nextInt(0, 25);
+                    secondNumber = RandomUtils.nextInt(0, 25);
+                    questions[i] = firstNumber + " * " + secondNumber;
+                    rightAnswers[i] = firstNumber * secondNumber + "";
+                    break;
+                }
             }
-        } while (counterRightAnswer < 3);
-        System.out.println("Congratulations, " + userName + ", you win!!!");
+        }
+        Engine.gameLogic("What is the result of the expression?", questions, rightAnswers);
     }
 }
