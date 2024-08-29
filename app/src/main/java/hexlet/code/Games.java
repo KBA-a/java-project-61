@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.util.Scanner;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Games {
@@ -27,7 +26,6 @@ public class Games {
 
     public static void calc() {
 
-        Scanner input = new Scanner(System.in);
         int firstNumber;
         int secondNumber;
         String[] questions = new String[3];
@@ -58,5 +56,28 @@ public class Games {
             }
         }
         Engine.gameLogic("What is the result of the expression?", questions, rightAnswers);
+    }
+
+    public static void GSD() {
+
+        String[] question = new String[3];
+        String[] rightAnswer = new String[3];
+
+        for(int i = 0; i < 3; i++) {
+
+            int firstNumber = RandomUtils.nextInt(0, 100);
+            int secondNumber = RandomUtils.nextInt(0, 100);
+
+            question[i] = firstNumber + " " + secondNumber;
+            while (firstNumber != 0 && secondNumber != 0) {
+                if (firstNumber > secondNumber) {
+                    firstNumber = firstNumber % secondNumber;
+                } else {
+                    secondNumber = secondNumber % firstNumber;
+                }
+            }
+            rightAnswer[i] = Math.max(firstNumber, secondNumber) + "";
+        }
+        Engine.gameLogic("Find the greatest common divisor of given numbers.", question , rightAnswer);
     }
 }
