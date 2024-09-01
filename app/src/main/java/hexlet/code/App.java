@@ -23,30 +23,31 @@ class App {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
-        int choiceOfGame = input.nextInt();
+        String choiceOfGame = input.nextLine();
         switch (choiceOfGame) {
-            case 1:
+            case "1": {
                 System.out.println("Welcome to the Brain Games!");
                 System.out.print("May I have your name? ");
                 String userName = input.nextLine();
                 System.out.println("Hello, " + userName + "!");
+            }
                 break;
-            case 2:
+            case "2":
                 Even.game();
                 break;
-            case 3:
+            case "3":
                 Calc.game();
                 break;
-            case 4:
+            case "4":
                 Gsd.game();
                 break;
-            case 5:
+            case "5":
                 Progression.game();
                 break;
-            case 6:
+            case "6":
                 Prime.game();
                 break;
-            case 0:
+            case "0":
                 break;
             default:
                 System.out.println("You entered something wrong. Try again!");
