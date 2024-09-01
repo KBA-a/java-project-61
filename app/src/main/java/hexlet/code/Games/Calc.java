@@ -12,22 +12,18 @@ public class Calc {
         String[] rightAnswers = new String[3];
 
         for (int i = 0; i < 3; i++) {
+            firstNumber = RandomUtils.nextInt(0, 100);
+            secondNumber = RandomUtils.nextInt(0, 100);
             switch (RandomUtils.nextInt(0, 3)) {
                 case 0:
-                    firstNumber = RandomUtils.nextInt(0, 100);
-                    secondNumber = RandomUtils.nextInt(0, 100);
                     questions[i] = firstNumber + " + " + secondNumber;
                     rightAnswers[i] = firstNumber + secondNumber + "";
                     break;
                 case 1:
-                    firstNumber = RandomUtils.nextInt(0, 100);
-                    secondNumber = RandomUtils.nextInt(0, 100);
                     questions[i] = firstNumber + " - " + secondNumber;
                     rightAnswers[i] = firstNumber - secondNumber + "";
                     break;
                 case 2:
-                    firstNumber = RandomUtils.nextInt(0, 25);
-                    secondNumber = RandomUtils.nextInt(0, 25);
                     questions[i] = firstNumber + " * " + secondNumber;
                     rightAnswers[i] = firstNumber * secondNumber + "";
                     break;
