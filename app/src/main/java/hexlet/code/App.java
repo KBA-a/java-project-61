@@ -2,11 +2,11 @@ package hexlet.code;
 
 
 import java.util.Scanner;
-import hexlet.code.Games.Even;
-import hexlet.code.Games.Calc;
-import hexlet.code.Games.Gsd;
-import hexlet.code.Games.Progression;
-import hexlet.code.Games.Prime;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GSD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 class App {
 
@@ -33,19 +33,19 @@ class App {
             }
                 break;
             case "2":
-                Even.game();
+                Even.even();
                 break;
             case "3":
-                Calc.game();
+                Calc.calc();
                 break;
             case "4":
-                Gsd.game();
+                GSD.gsd();
                 break;
             case "5":
-                Progression.game();
+                Progression.progression();
                 break;
             case "6":
-                Prime.game();
+                Prime.prime();
                 break;
             case "0":
                 break;
