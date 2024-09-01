@@ -5,15 +5,18 @@ import org.apache.commons.lang3.RandomUtils;
 
 public class Calc {
     public static void game() {
-
         int firstNumber;
         int secondNumber;
         String[] questions = new String[3];
         String[] rightAnswers = new String[3];
-
         for (int i = 0; i < 3; i++) {
-            firstNumber = RandomUtils.nextInt(0, 100);
-            secondNumber = RandomUtils.nextInt(0, 100);
+            if (i != 2) {
+                firstNumber = RandomUtils.nextInt(0, 100);
+                secondNumber = RandomUtils.nextInt(0, 100);
+            } else {
+                firstNumber = RandomUtils.nextInt(0, 25);
+                secondNumber = RandomUtils.nextInt(0, 25);
+            }
             switch (RandomUtils.nextInt(0, 3)) {
                 case 0:
                     questions[i] = firstNumber + " + " + secondNumber;

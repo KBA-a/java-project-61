@@ -5,11 +5,9 @@ import org.apache.commons.lang3.RandomUtils;
 
 public class Prime {
     public static void game()  {
-
         String[] question = new String[3];
         String[] rightAnswer = new String[3];
         int number;
-
         for (int i = 0; i < 3; i++) {
             number = RandomUtils.nextInt(2, 1000);
             question[i] = number + "";

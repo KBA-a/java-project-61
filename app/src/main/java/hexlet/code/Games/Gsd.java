@@ -5,15 +5,11 @@ import org.apache.commons.lang3.RandomUtils;
 
 public class Gsd {
     public static void game() {
-
         String[] questions = new String[3];
         String[] rightAnswers = new String[3];
-
         for (int i = 0; i < 3; i++) {
-
             int firstNumber = RandomUtils.nextInt(0, 100);
             int secondNumber = RandomUtils.nextInt(0, 100);
-
             questions[i] = firstNumber + " " + secondNumber;
             while (firstNumber != 0 && secondNumber != 0) {
                 if (firstNumber > secondNumber) {

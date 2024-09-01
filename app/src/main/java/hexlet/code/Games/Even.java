@@ -6,11 +6,9 @@ import org.apache.commons.lang3.RandomUtils;
 public class Even {
 
     public static void game() {
-
         String[] questions = new String[3];
         String[] rightAnswers = new String[3];
         int randomNumber;
-
         for (int i = 0; i < 3; i++) {
             randomNumber = RandomUtils.nextInt(0, 100);
             questions[i] = randomNumber + "";
