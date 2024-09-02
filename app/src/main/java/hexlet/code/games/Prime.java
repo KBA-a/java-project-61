@@ -6,11 +6,11 @@ import org.apache.commons.lang3.RandomUtils;
 public class Prime {
     public static void prime()  {
 
-        byte countOfRounds = 3;
+        final byte countOfRounds = 3;
         String[] question = new String[countOfRounds];
         String[] rightAnswer = new String[countOfRounds];
         int number;
-        int maxNumber = 1000;
+        final int maxNumber = 1000;
 
         for (int i = 0; i < countOfRounds; i++) {
             number = RandomUtils.nextInt(2, maxNumber);

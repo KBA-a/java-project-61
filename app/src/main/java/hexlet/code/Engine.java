@@ -9,7 +9,7 @@ public class Engine {
         byte counterRightAnswer = 0;
         Scanner input = new Scanner(System.in);
         String usersAnswer;
-        byte countOfRounds = 3;
+        final byte countOfRounds = 3;
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");

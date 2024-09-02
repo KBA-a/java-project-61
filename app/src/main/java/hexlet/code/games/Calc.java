@@ -8,11 +8,11 @@ public class Calc {
 
         int firstNumber;
         int secondNumber;
-        byte countOfRounds = 3;
+        final byte countOfRounds = 3;
         String[] questions = new String[countOfRounds];
         String[] rightAnswers = new String[countOfRounds];
-        int maxOperandSumDiff = 100;
-        int maxOperandMult = 25;
+        final int maxOperandSumDiff = 100;
+        final int maxOperandMult = 25;
 
         for (int i = 0; i < countOfRounds; i++) {
             switch (RandomUtils.nextInt(0, countOfRounds)) {

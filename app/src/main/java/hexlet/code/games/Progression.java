@@ -6,14 +6,14 @@ import org.apache.commons.lang3.RandomUtils;
 public class Progression {
     public static void progression() {
 
-        byte countOfRounds = 3;
+        final byte countOfRounds = 3;
         String[] rightAnswers = new String[countOfRounds];
         String[] questions = new String[countOfRounds];
-        int maxLengthProgression = 15;
-        int minLengthProgression = 8;
-        int maxStepProgression = 10;
-        int minStepProgression = 1;
-        int maxFirstElementProgression = 47;
+        final int maxLengthProgression = 15;
+        final int minLengthProgression = 8;
+        final int maxStepProgression = 10;
+        final int minStepProgression = 1;
+        final int maxFirstElementProgression = 47;
 
         for (int i = 0; i < countOfRounds; i++) {
             int lengthProgression = RandomUtils.nextInt(minLengthProgression, maxLengthProgression);

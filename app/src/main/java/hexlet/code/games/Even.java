@@ -6,10 +6,10 @@ import org.apache.commons.lang3.RandomUtils;
 public class Even {
     public static void even() {
 
-        byte countOfRounds = 3;
+        final byte countOfRounds = 3;
         String[] questions = new String[countOfRounds];
         String[] rightAnswers = new String[countOfRounds];
-        int maxNumber = 100;
+        final int maxNumber = 100;
         int randomNumber;
 
         for (int i = 0; i < countOfRounds; i++) {
