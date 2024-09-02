@@ -29,7 +29,7 @@ public class Engine {
             }
 
         } while (counterRightAnswer < 3);
-        System.out.println("Congratulation, " + userName + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
 
 }
