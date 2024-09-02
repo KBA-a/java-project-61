@@ -19,7 +19,7 @@ public class Even {
                 rightAnswers[i] = "no";
             }
         }
-        Engine.gameLogic("Answer 'yes' if the number is even, otherwise answer 'no'",
+        Engine.gameLogic("Answer 'yes' if the number is even, otherwise answer 'no'.",
                 questions, rightAnswers);
 
     }
