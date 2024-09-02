@@ -11,6 +11,7 @@ public class Prime {
         String[] rightAnswer = new String[countOfRounds];
         int number;
         final int maxNumber = 1000;
+        final int startNUmberSearching = 3;
 
         for (int i = 0; i < countOfRounds; i++) {
             number = RandomUtils.nextInt(2, maxNumber);
@@ -18,8 +19,9 @@ public class Prime {
             rightAnswer[i] = "yes";
             if (number % 2 == 0 && number != 2) {
                 rightAnswer[i] = "no";
+                continue;
             }
-            for (int j = 3; j < number; j += 2) {
+            for (int j = startNUmberSearching; j < number; j += 2) {
                 if (number % j == 0) {
                     rightAnswer[i] = "no";
                     break;
