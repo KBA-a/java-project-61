@@ -10,7 +10,7 @@ public class Progression {
         String[] rightAnswers = new String[countOfRounds];
         String[] questions = new String[countOfRounds];
         int maxLengthProgression = 15;
-        int minLengthProgression = 8;git
+        int minLengthProgression = 8;
         int maxStepProgression = 10;
         int minStepProgression = 1;
         int maxFirstElementProgression = 47;
