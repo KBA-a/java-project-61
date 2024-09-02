@@ -8,26 +8,29 @@ public class Calc {
 
         int firstNumber;
         int secondNumber;
-        String[] questions = new String[3];
-        String[] rightAnswers = new String[3];
+        byte countOfRounds = 3;
+        String[] questions = new String[countOfRounds];
+        String[] rightAnswers = new String[countOfRounds];
+        int maxOperandSumDiff = 100;
+        int maxOperandMult = 25;
 
-        for (int i = 0; i < 3; i++) {
-            switch (RandomUtils.nextInt(0, 3)) {
+        for (int i = 0; i < countOfRounds; i++) {
+            switch (RandomUtils.nextInt(0, countOfRounds)) {
                 case 0:
-                    firstNumber = RandomUtils.nextInt(0, 100);
-                    secondNumber = RandomUtils.nextInt(0, 100);
+                    firstNumber = RandomUtils.nextInt(0, maxOperandSumDiff);
+                    secondNumber = RandomUtils.nextInt(0, maxOperandSumDiff);
                     questions[i] = firstNumber + " + " + secondNumber;
                     rightAnswers[i] = firstNumber + secondNumber + "";
                     break;
                 case 1:
-                    firstNumber = RandomUtils.nextInt(0, 100);
-                    secondNumber = RandomUtils.nextInt(0, 100);
+                    firstNumber = RandomUtils.nextInt(0, maxOperandSumDiff);
+                    secondNumber = RandomUtils.nextInt(0, maxOperandSumDiff);
                     questions[i] = firstNumber + " - " + secondNumber;
                     rightAnswers[i] = firstNumber - secondNumber + "";
                     break;
                 case 2:
-                    firstNumber = RandomUtils.nextInt(0, 25);
-                    secondNumber = RandomUtils.nextInt(0, 25);
+                    firstNumber = RandomUtils.nextInt(0, maxOperandMult);
+                    secondNumber = RandomUtils.nextInt(0, maxOperandMult);
                     questions[i] = firstNumber + " * " + secondNumber;
                     rightAnswers[i] = firstNumber * secondNumber + "";
                     break;

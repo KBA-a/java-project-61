@@ -9,6 +9,7 @@ public class Engine {
         byte counterRightAnswer = 0;
         Scanner input = new Scanner(System.in);
         String usersAnswer;
+        byte countOfRounds = 3;
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -27,8 +28,7 @@ public class Engine {
                         + "'" + rightAnswers[counterRightAnswer] + "' " + "\nLet's try again, " + userName + "!");
                 return;
             }
-
-        } while (counterRightAnswer < 3);
+        } while (counterRightAnswer < countOfRounds);
         System.out.println("Congratulations, " + userName + "!");
     }
 

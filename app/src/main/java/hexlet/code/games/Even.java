@@ -6,12 +6,14 @@ import org.apache.commons.lang3.RandomUtils;
 public class Even {
     public static void even() {
 
-        String[] questions = new String[3];
-        String[] rightAnswers = new String[3];
+        byte countOfRounds = 3;
+        String[] questions = new String[countOfRounds];
+        String[] rightAnswers = new String[countOfRounds];
+        int maxNumber = 100;
         int randomNumber;
 
-        for (int i = 0; i < 3; i++) {
-            randomNumber = RandomUtils.nextInt(0, 100);
+        for (int i = 0; i < countOfRounds; i++) {
+            randomNumber = RandomUtils.nextInt(0, maxNumber);
             questions[i] = randomNumber + "";
             if (randomNumber % 2 == 0) {
                 rightAnswers[i] = "yes";

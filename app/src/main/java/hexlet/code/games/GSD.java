@@ -6,13 +6,15 @@ import org.apache.commons.lang3.RandomUtils;
 public class GSD {
     public static void gsd() {
 
-        String[] questions = new String[3];
-        String[] rightAnswers = new String[3];
+        byte countOfRounds = 3;
+        String[] questions = new String[countOfRounds];
+        String[] rightAnswers = new String[countOfRounds];
+        int maxNumber = 100;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < countOfRounds; i++) {
 
-            int firstNumber = RandomUtils.nextInt(0, 100);
-            int secondNumber = RandomUtils.nextInt(0, 100);
+            int firstNumber = RandomUtils.nextInt(0, maxNumber);
+            int secondNumber = RandomUtils.nextInt(0, maxNumber);
 
             questions[i] = firstNumber + " " + secondNumber;
             while (firstNumber != 0 && secondNumber != 0) {
