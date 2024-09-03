@@ -13,31 +13,35 @@ public class Progression {
         final int minLengthProgression = 8;
         final int maxStepProgression = 10;
         final int minStepProgression = 1;
+        final int minFirstElementProgression = 0;
         final int maxFirstElementProgression = 47;
+
 
         for (int i = 0; i < countOfRounds; i++) {
             int lengthProgression = RandomUtils.nextInt(minLengthProgression, maxLengthProgression);
             int stepProgression = RandomUtils.nextInt(minStepProgression, maxStepProgression);
-            int missingElement = RandomUtils.nextInt(0, lengthProgression - 1);
-            int elementProgression = RandomUtils.nextInt(0, maxFirstElementProgression);
+            int skippedElement = RandomUtils.nextInt(0, lengthProgression - 1);
+            int elementProgression = RandomUtils.nextInt(minFirstElementProgression, maxFirstElementProgression);
 
-            if (missingElement == 0) {
-                questions[i] = "..";
-                rightAnswers[i] = elementProgression + "";
-            }   else {
-                questions[i] = elementProgression + "";
-            }
-            for (int j = 1; j < lengthProgression; j++) {
-                elementProgression += stepProgression;
-                if (missingElement == j) {
-                    rightAnswers[i] = elementProgression + "";
-                    questions[i] = questions[i] + " ..";
-                } else {
-                    questions[i] = questions[i] + " " + elementProgression;
-                }
-            }
-
+            rightAnswers[i] = String.valueOf(elementProgression + skippedElement * stepProgression);
+            questions[i] = progressionBuilder(lengthProgression, skippedElement,
+                    elementProgression, stepProgression);
         }
+
         Engine.gameLogic("What number is missing in the progression?", questions, rightAnswers);
+    }
+
+    public static String progressionBuilder(int lengthProgression, int skippedElement,
+                                            int elementProgression, int stepProgression) {
+        String questions = "";
+        for (int j = 0; j < lengthProgression - 1; j++) {
+            if (skippedElement == j) {
+                questions = questions + ".." + " ";
+            } else {
+                questions = questions + elementProgression + " ";
+            }
+            elementProgression += stepProgression;
+        }
+        return questions;
     }
 }
