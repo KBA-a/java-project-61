@@ -26,10 +26,7 @@ class App {
         String choiceOfGame = input.nextLine();
         switch (choiceOfGame) {
             case "1":
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                String userName = input.nextLine();
-                System.out.println("Hello, " + userName + "!");
+                Cli.userGreeting();
                 break;
             case "2":
                 Even.even();
