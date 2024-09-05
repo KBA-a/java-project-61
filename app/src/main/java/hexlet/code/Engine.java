@@ -7,7 +7,6 @@ public class Engine {
 
     public static void gameLogic(String requirement, String[] questions, String[] rightAnswers) {
 
-        byte counterRightAnswer = 0;
         Scanner input = new Scanner(System.in);
         String usersAnswer;
 
@@ -17,18 +16,17 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
 
         System.out.println(requirement);
-        do {
-            System.out.print("Question: " + questions[counterRightAnswer] + "\nYour answer: ");
+        for (int i = 0; i < countOfRounds; i++) {
+            System.out.print("Question: " + questions[i] + "\nYour answer: ");
             usersAnswer = input.nextLine();
-            if (usersAnswer.equalsIgnoreCase(rightAnswers[counterRightAnswer])) {
+            if (usersAnswer.equalsIgnoreCase(rightAnswers[i])) {
                 System.out.println("Correct!");
-                counterRightAnswer++;
             } else {
                 System.out.println("'" + usersAnswer + "' " + "is wrong answer ;(. Correct answer was "
-                        + "'" + rightAnswers[counterRightAnswer] + "' " + "\nLet's try again, " + userName + "!");
+                        + "'" + rightAnswers[i] + "' " + "\nLet's try again, " + userName + "!");
                 return;
             }
-        } while (counterRightAnswer < countOfRounds);
+        }
         System.out.println("Congratulations, " + userName + "!");
     }
 
