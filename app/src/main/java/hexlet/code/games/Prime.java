@@ -6,14 +6,13 @@ import org.apache.commons.lang3.RandomUtils;
 public class Prime {
     public static void prime()  {
 
-        final byte countOfRounds = 3;
-        String[] question = new String[countOfRounds];
-        String[] rightAnswer = new String[countOfRounds];
+        String[] question = new String[Engine.countOfRounds];
+        String[] rightAnswer = new String[Engine.countOfRounds];
         int number;
         final int maxNumber = 1000;
 
 
-        for (int i = 0; i < countOfRounds; i++) {
+        for (int i = 0; i < Engine.countOfRounds; i++) {
             number = RandomUtils.nextInt(2, maxNumber);
             question[i] = number + "";
             rightAnswer[i] = checkingForPrimeNUmber(number);

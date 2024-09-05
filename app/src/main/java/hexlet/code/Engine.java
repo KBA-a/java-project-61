@@ -3,13 +3,13 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    public static final byte countOfRounds = 3;
 
     public static void gameLogic(String requirement, String[] questions, String[] rightAnswers) {
 
         byte counterRightAnswer = 0;
         Scanner input = new Scanner(System.in);
         String usersAnswer;
-        final byte countOfRounds = 3;
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");

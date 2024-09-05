@@ -1,22 +1,21 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.*;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Calc {
     public static void calc() {
 
-        final byte countOfRounds = 3;
-        String[] questions = new String[countOfRounds];
-        String[] rightAnswers = new String[countOfRounds];
+        String[] questions = new String[Engine.countOfRounds];
+        String[] rightAnswers = new String[Engine.countOfRounds];
         final int maxOperandSumDiff = 100;
         int firstNumber;
         int secondNumber;
 
-        for (int i = 0; i < countOfRounds; i++) {
+        for (int i = 0; i < Engine.countOfRounds; i++) {
             firstNumber = RandomUtils.nextInt(0, maxOperandSumDiff);
             secondNumber = RandomUtils.nextInt(0, maxOperandSumDiff);
-            switch (RandomUtils.nextInt(0, countOfRounds)) {
+            switch (RandomUtils.nextInt(0, Engine.countOfRounds)) {
                 case 0:
                     questions[i] = buildQuestion(" + ", firstNumber, secondNumber);
                     rightAnswers[i] = buildRightAnswer(" + ", firstNumber, secondNumber);

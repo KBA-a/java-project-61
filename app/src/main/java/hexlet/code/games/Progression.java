@@ -5,10 +5,9 @@ import org.apache.commons.lang3.RandomUtils;
 
 public class Progression {
     public static void progression() {
-
-        final byte countOfRounds = 3;
-        String[] rightAnswers = new String[countOfRounds];
-        String[] questions = new String[countOfRounds];
+        
+        String[] rightAnswers = new String[Engine.countOfRounds];
+        String[] questions = new String[Engine.countOfRounds];
         final int maxLengthProgression = 15;
         final int minLengthProgression = 8;
         final int maxStepProgression = 10;
@@ -17,7 +16,7 @@ public class Progression {
         final int maxFirstElementProgression = 47;
 
 
-        for (int i = 0; i < countOfRounds; i++) {
+        for (int i = 0; i < Engine.countOfRounds; i++) {
             int lengthProgression = RandomUtils.nextInt(minLengthProgression, maxLengthProgression);
             int stepProgression = RandomUtils.nextInt(minStepProgression, maxStepProgression);
             int skippedElement = RandomUtils.nextInt(0, lengthProgression - 1);
