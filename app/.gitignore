@@ -16,6 +16,7 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+src/main/java/hexlet/code/commons-lang3-3.16.0.jar
 
 
 ### Eclipse ###
