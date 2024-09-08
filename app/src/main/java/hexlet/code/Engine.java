@@ -3,7 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static final byte countOfRounds = 3;
+
+    public static final byte CountOfRounds = 3;
 
     public static void gameLogic(String requirement, String[] questions, String[] rightAnswers) {
 
@@ -16,7 +17,7 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
 
         System.out.println(requirement);
-        for (int i = 0; i < countOfRounds; i++) {
+        for (int i = 0; i < CountOfRounds; i++) {
             System.out.print("Question: " + questions[i] + "\nYour answer: ");
             usersAnswer = input.nextLine();
             if (usersAnswer.equalsIgnoreCase(rightAnswers[i])) {
