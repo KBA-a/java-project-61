@@ -25,28 +25,15 @@ class App {
                 Your choice:\s""");
         String choiceOfGame = input.nextLine();
         switch (choiceOfGame) {
-            case "1":
-                Cli.userGreeting();
-                break;
-            case "2":
-                Even.even();
-                break;
-            case "3":
-                Calc.calc();
-                break;
-            case "4":
-                GSD.gsd();
-                break;
-            case "5":
-                Progression.progression();
-                break;
-            case "6":
-                Prime.prime();
-                break;
-            case "0":
-                break;
-            default:
-                System.out.println("You entered something wrong. Try again!");
+            case "1" -> Cli.userGreeting();
+            case "2" -> Even.even();
+            case "3" -> Calc.calc();
+            case "4" -> GSD.gsd();
+            case "5" -> Progression.progression();
+            case "6" -> Prime.prime();
+            case "0" -> {
+            }
+            default -> System.out.println("You entered something wrong. Try again!");
         }
     }
 }
