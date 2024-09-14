@@ -3,11 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
+import java.util.Arrays;
+
 public class Progression {
     public static void progression() {
-        
-        String[] rightAnswers = new String[Engine.countOfRounds];
-        String[] questions = new String[Engine.countOfRounds];
+
+        String[] rightAnswers = new String[Engine.COUNT_OF_ROUNDS];
+        String[] questions = new String[Engine.COUNT_OF_ROUNDS];
         final int maxLengthProgression = 15;
         final int minLengthProgression = 8;
         final int maxStepProgression = 10;
@@ -16,30 +18,29 @@ public class Progression {
         final int maxFirstElementProgression = 47;
 
 
-        for (int i = 0; i < Engine.countOfRounds; i++) {
+        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
             int lengthProgression = RandomUtils.nextInt(minLengthProgression, maxLengthProgression);
             int stepProgression = RandomUtils.nextInt(minStepProgression, maxStepProgression);
-            int skippedElement = RandomUtils.nextInt(0, lengthProgression - 1);
+            int skippedElement = RandomUtils.nextInt(1, lengthProgression);
             int elementProgression = RandomUtils.nextInt(minFirstElementProgression, maxFirstElementProgression);
+            String[] progression = progressionBuilder(lengthProgression, elementProgression, stepProgression);
 
-            rightAnswers[i] = String.valueOf(elementProgression + skippedElement * stepProgression);
-            questions[i] = progressionBuilder(lengthProgression, skippedElement,
-                    elementProgression, stepProgression);
+            rightAnswers[i] = progression[skippedElement - 1];
+            progression[skippedElement - 1] = "..";
+            questions[i] = Arrays.toString(progression);
+            questions[i] = questions[i].replace(",", "");
+            questions[i] = questions[i].replace("[", "");
+            questions[i] = questions[i].replace("]", "");
         }
 
         Engine.gameLogic("What number is missing in the progression?", questions, rightAnswers);
     }
 
-    public static String progressionBuilder(int lengthProgression, int skippedElement,
-                                            int elementProgression, int stepProgression) {
-        String questions = "";
-        for (int j = 0; j < lengthProgression - 1; j++) {
-            if (skippedElement == j) {
-                questions = questions + ".." + " ";
-            } else {
-                questions = questions + elementProgression + " ";
-            }
-            elementProgression += stepProgression;
+    public static String[] progressionBuilder(int lengthProgression, int elementProgression, int stepProgression) {
+        String[] questions = new String[lengthProgression];
+        for (int j = 0; j < lengthProgression; j++) {
+            elementProgression = elementProgression + stepProgression;
+            questions[j] = elementProgression + "";
         }
         return questions;
     }
