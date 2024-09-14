@@ -6,36 +6,36 @@ import org.apache.commons.lang3.RandomUtils;
 public class Prime {
     public static void prime()  {
 
-        String[] question = new String[Engine.countOfRounds];
-        String[] rightAnswer = new String[Engine.countOfRounds];
+        String[] question = new String[Engine.COUNT_OF_ROUNDS];
+        String[] rightAnswer = new String[Engine.COUNT_OF_ROUNDS];
         int number;
         final int maxNumber = 1000;
 
 
-        for (int i = 0; i < Engine.countOfRounds; i++) {
+        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
             number = RandomUtils.nextInt(2, maxNumber);
             question[i] = number + "";
-            rightAnswer[i] = checkingForPrimeNUmber(number);
+            if (isPrime(number)) {
+                rightAnswer[i] = "yes";
+            } else {
+                rightAnswer[i] = "no";
+            }
         }
         Engine.gameLogic("Answer 'yes' if given number is prime. Otherwise answer 'no'.",
                 question, rightAnswer);
     }
 
-    public static String checkingForPrimeNUmber(int number) {
+    public static boolean isPrime(int number) {
 
         final int startNUmberSearching = 3;
-        String rightAnswer = "yes";
-
         if (number % 2 == 0 && number != 2) {
-            rightAnswer = "no";
-            return rightAnswer;
+            return false;
         }
         for (int j = startNUmberSearching; j < number; j += 2) {
             if (number % j == 0) {
-                rightAnswer = "no";
-                return rightAnswer;
+                return false;
             }
         }
-        return rightAnswer;
+        return true;
     }
 }
