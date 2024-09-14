@@ -1,36 +1,25 @@
 package hexlet.code.games;
 
-import hexlet.code.*;
+import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Calc {
     public static void calc() {
 
-        String[] questions = new String[Engine.countOfRounds];
-        String[] rightAnswers = new String[Engine.countOfRounds];
-        final int maxOperandSumDiff = 100;
+        String[] questions = new String[Engine.COUNT_OF_ROUNDS];
+        String[] rightAnswers = new String[Engine.COUNT_OF_ROUNDS];
+        String[] operators = new String[]{" + ", " - ", " * "};
+        final int maxOperand = 100;
+        final int lastOperator = 3;
         int firstNumber;
         int secondNumber;
 
-        for (int i = 0; i < Engine.countOfRounds; i++) {
-            firstNumber = RandomUtils.nextInt(0, maxOperandSumDiff);
-            secondNumber = RandomUtils.nextInt(0, maxOperandSumDiff);
-            switch (RandomUtils.nextInt(0, Engine.countOfRounds)) {
-                case 0:
-                    questions[i] = buildQuestion(" + ", firstNumber, secondNumber);
-                    rightAnswers[i] = buildRightAnswer(" + ", firstNumber, secondNumber);
-                    break;
-                case 1:
-                    questions[i] = buildQuestion(" - ", firstNumber, secondNumber);
-                    rightAnswers[i] = buildRightAnswer(" - ", firstNumber, secondNumber);
-                    break;
-                case 2:
-                    questions[i] = buildQuestion(" * ", firstNumber, secondNumber);
-                    rightAnswers[i] = buildRightAnswer(" * ", firstNumber, secondNumber);
-                    break;
-                default:
-                    break;
-            }
+        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
+            firstNumber = RandomUtils.nextInt(0, maxOperand);
+            secondNumber = RandomUtils.nextInt(0, maxOperand);
+            int usedOperator = RandomUtils.nextInt(0, lastOperator);
+            questions[i] = buildQuestion(operators[usedOperator], firstNumber, secondNumber);
+            rightAnswers[i] = String.valueOf(calculateAnswer(operators[usedOperator], firstNumber, secondNumber));
         }
         Engine.gameLogic("What is the result of the expression?", questions, rightAnswers);
     }
@@ -39,12 +28,11 @@ public class Calc {
         return firstNumber + operator + secondNumber;
     }
 
-    public static String buildRightAnswer(String operator, int firstNumber, int secondNumber) {
+    public static int calculateAnswer(String operator, int firstNumber, int secondNumber) {
         return switch (operator) {
-            case " + " -> firstNumber + secondNumber + "";
-            case " - " -> firstNumber - secondNumber + "";
-            case " * " -> firstNumber * secondNumber + "";
-            default -> "Ops";
+            case " + " -> firstNumber + secondNumber;
+            case " - " -> firstNumber - secondNumber;
+            default -> firstNumber * secondNumber;
         };
     }
 }
