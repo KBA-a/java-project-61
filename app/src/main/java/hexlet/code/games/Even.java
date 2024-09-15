@@ -14,11 +14,8 @@ public class Even {
         for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
             randomNumber = RandomUtils.nextInt(0, maxNumber);
             questions[i] = randomNumber + "";
-            if (isEven(randomNumber)) {
-                rightAnswers[i] = "yes";
-            } else {
-                rightAnswers[i] = "no";
-            }
+            rightAnswers[i] = isEven(randomNumber) ? "yes" : "no";
+
         }
         Engine.gameLogic("Answer 'yes' if the number is even, otherwise answer 'no'.",
                 questions, rightAnswers);
