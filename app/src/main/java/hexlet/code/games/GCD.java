@@ -9,6 +9,7 @@ public class GCD {
         String[] questions = new String[Engine.COUNT_OF_ROUNDS];
         String[] rightAnswers = new String[Engine.COUNT_OF_ROUNDS];
         final int maxNumber = 100;
+        final String requirement = "Find the greatest common divisor of given numbers.";
 
         for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
 
@@ -18,7 +19,7 @@ public class GCD {
             questions[i] = firstNumber + " " + secondNumber;
             rightAnswers[i] = searchingGSD(firstNumber, secondNumber) + "";
         }
-        Engine.gameLogic("Find the greatest common divisor of given numbers.", questions, rightAnswers);
+        Engine.gameLogic(requirement, questions, rightAnswers);
     }
 
     public static int searchingGSD(int firstNumber, int secondNumber) {

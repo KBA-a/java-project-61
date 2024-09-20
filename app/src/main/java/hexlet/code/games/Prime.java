@@ -10,6 +10,7 @@ public class Prime {
         String[] rightAnswer = new String[Engine.COUNT_OF_ROUNDS];
         int number;
         final int maxNumber = 1000;
+        final String requirement = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 
         for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
@@ -21,8 +22,7 @@ public class Prime {
                 rightAnswer[i] = "no";
             }
         }
-        Engine.gameLogic("Answer 'yes' if given number is prime. Otherwise answer 'no'.",
-                question, rightAnswer);
+        Engine.gameLogic(requirement, question, rightAnswer);
     }
 
     public static boolean isPrime(int number) {

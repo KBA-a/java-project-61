@@ -11,6 +11,7 @@ public class Calc {
         String[] operators = new String[]{" + ", " - ", " * "};
         final int maxOperand = 100;
         final int lastOperator = 3;
+        final String requirement = "What is the result of the expression?";
         int firstNumber;
         int secondNumber;
 
@@ -21,7 +22,7 @@ public class Calc {
             questions[i] = buildQuestion(operators[usedOperator], firstNumber, secondNumber);
             rightAnswers[i] = String.valueOf(calculateAnswer(operators[usedOperator], firstNumber, secondNumber));
         }
-        Engine.gameLogic("What is the result of the expression?", questions, rightAnswers);
+        Engine.gameLogic(requirement, questions, rightAnswers);
     }
 
     public static String buildQuestion(String operator, int firstNumber, int secondNumber) {

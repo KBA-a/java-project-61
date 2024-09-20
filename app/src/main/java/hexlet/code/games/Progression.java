@@ -16,6 +16,7 @@ public class Progression {
         final int minStepProgression = 1;
         final int minFirstElementProgression = 0;
         final int maxFirstElementProgression = 47;
+        final String requirement = "What number is missing in the progression?";
 
 
         for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
@@ -33,7 +34,7 @@ public class Progression {
             questions[i] = questions[i].replace("]", "");
         }
 
-        Engine.gameLogic("What number is missing in the progression?", questions, rightAnswers);
+        Engine.gameLogic(requirement, questions, rightAnswers);
     }
 
     public static String[] progressionBuilder(int lengthProgression, int elementProgression, int stepProgression) {

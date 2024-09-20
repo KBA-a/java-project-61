@@ -10,6 +10,7 @@ public class Even {
         String[] rightAnswers = new String[Engine.COUNT_OF_ROUNDS];
         final int maxNumber = 100;
         int randomNumber;
+        final String requirement = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
             randomNumber = RandomUtils.nextInt(0, maxNumber);
@@ -17,8 +18,7 @@ public class Even {
             rightAnswers[i] = isEven(randomNumber) ? "yes" : "no";
 
         }
-        Engine.gameLogic("Answer 'yes' if the number is even, otherwise answer 'no'.",
-                questions, rightAnswers);
+        Engine.gameLogic(requirement, questions, rightAnswers);
 
     }
 
