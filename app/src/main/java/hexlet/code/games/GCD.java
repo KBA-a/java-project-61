@@ -3,8 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
-public class GSD {
-    public static void gsd() {
+public class GCD {
+    public static void gcd() {
 
         String[] questions = new String[Engine.COUNT_OF_ROUNDS];
         String[] rightAnswers = new String[Engine.COUNT_OF_ROUNDS];

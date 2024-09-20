@@ -4,7 +4,7 @@ package hexlet.code;
 import java.util.Scanner;
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
-import hexlet.code.games.GSD;
+import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
@@ -28,7 +28,7 @@ class App {
             case "1" -> Cli.userGreeting();
             case "2" -> Even.even();
             case "3" -> Calc.calc();
-            case "4" -> GSD.gsd();
+            case "4" -> GCD.gcd();
             case "5" -> Progression.progression();
             case "6" -> Prime.prime();
             case "0" -> {
