@@ -40,8 +40,7 @@ public class Progression {
     public static String[] progressionBuilder(int lengthProgression, int elementProgression, int stepProgression) {
         String[] questions = new String[lengthProgression];
         for (int j = 0; j < lengthProgression; j++) {
-            elementProgression = elementProgression + stepProgression;
-            questions[j] = elementProgression + "";
+            questions[j] = String.valueOf(elementProgression + stepProgression * j);
         }
         return questions;
     }
