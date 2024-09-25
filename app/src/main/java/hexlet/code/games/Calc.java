@@ -33,7 +33,8 @@ public class Calc {
         return switch (operator) {
             case " + " -> firstNumber + secondNumber;
             case " - " -> firstNumber - secondNumber;
-            default -> firstNumber * secondNumber;
+            case " * " -> firstNumber * secondNumber;
+            default -> throw new Error("Something went wrong!");
         };
     }
 }

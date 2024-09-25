@@ -26,12 +26,11 @@ public class Prime {
     }
 
     public static boolean isPrime(int number) {
-
-        final int startNUmberSearching = 3;
-        if (number % 2 == 0 && number != 2) {
+        final int startNumberSearching = 3;
+        if (number < 2) {
             return false;
         }
-        for (int j = startNUmberSearching; j < number; j += 2) {
+        for (int j = startNumberSearching; j < number; j += 2) {
             if (number % j == 0) {
                 return false;
             }
