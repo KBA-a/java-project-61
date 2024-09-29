@@ -6,8 +6,7 @@ import org.apache.commons.lang3.RandomUtils;
 public class Prime {
     public static void prime()  {
 
-        String[] question = new String[Engine.COUNT_OF_ROUNDS];
-        String[] rightAnswer = new String[Engine.COUNT_OF_ROUNDS];
+        String[][] questionsAndRightAnswer = new String[Engine.COUNT_OF_ROUNDS][2];
         int number;
         final int maxNumber = 1000;
         final String requirement = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -15,14 +14,14 @@ public class Prime {
 
         for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
             number = RandomUtils.nextInt(2, maxNumber);
-            question[i] = number + "";
+            questionsAndRightAnswer[i][0] = number + "";
             if (isPrime(number)) {
-                rightAnswer[i] = "yes";
+                questionsAndRightAnswer[i][1] = "yes";
             } else {
-                rightAnswer[i] = "no";
+                questionsAndRightAnswer[i][1] = "no";
             }
         }
-        Engine.gameLogic(requirement, question, rightAnswer);
+        Engine.gameLogic(requirement, questionsAndRightAnswer);
     }
 
     public static boolean isPrime(int number) {

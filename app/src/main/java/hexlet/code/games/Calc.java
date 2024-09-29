@@ -6,8 +6,7 @@ import org.apache.commons.lang3.RandomUtils;
 public class Calc {
     public static void calc() {
 
-        String[] questions = new String[Engine.COUNT_OF_ROUNDS];
-        String[] rightAnswers = new String[Engine.COUNT_OF_ROUNDS];
+        String[][] questionsAndRightAnswer = new String[Engine.COUNT_OF_ROUNDS][2];
         String[] operators = new String[]{" + ", " - ", " * "};
         final int maxOperand = 100;
         final int lastOperator = 3;
@@ -19,10 +18,11 @@ public class Calc {
             firstNumber = RandomUtils.nextInt(0, maxOperand);
             secondNumber = RandomUtils.nextInt(0, maxOperand);
             int usedOperator = RandomUtils.nextInt(0, lastOperator);
-            questions[i] = buildQuestion(operators[usedOperator], firstNumber, secondNumber);
-            rightAnswers[i] = String.valueOf(calculateAnswer(operators[usedOperator], firstNumber, secondNumber));
+            questionsAndRightAnswer[i][0] = buildQuestion(operators[usedOperator], firstNumber, secondNumber);
+            questionsAndRightAnswer[i][1] = String.valueOf(calculateAnswer(operators[usedOperator],
+                    firstNumber, secondNumber));
         }
-        Engine.gameLogic(requirement, questions, rightAnswers);
+        Engine.gameLogic(requirement, questionsAndRightAnswer);
     }
 
     public static String buildQuestion(String operator, int firstNumber, int secondNumber) {

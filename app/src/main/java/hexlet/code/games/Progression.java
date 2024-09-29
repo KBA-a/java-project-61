@@ -8,8 +8,7 @@ import java.util.Arrays;
 public class Progression {
     public static void progression() {
 
-        String[] rightAnswers = new String[Engine.COUNT_OF_ROUNDS];
-        String[] questions = new String[Engine.COUNT_OF_ROUNDS];
+        String[][] questionsAndRightAnswer = new String[Engine.COUNT_OF_ROUNDS][2];
         final int maxLengthProgression = 15;
         final int minLengthProgression = 8;
         final int maxStepProgression = 10;
@@ -26,15 +25,15 @@ public class Progression {
             int elementProgression = RandomUtils.nextInt(minFirstElementProgression, maxFirstElementProgression);
             String[] progression = progressionBuilder(lengthProgression, elementProgression, stepProgression);
 
-            rightAnswers[i] = progression[skippedElement - 1];
+            questionsAndRightAnswer[i][1] = progression[skippedElement - 1];
             progression[skippedElement - 1] = "..";
-            questions[i] = Arrays.toString(progression);
-            questions[i] = questions[i].replace(",", "");
-            questions[i] = questions[i].replace("[", "");
-            questions[i] = questions[i].replace("]", "");
+            questionsAndRightAnswer[i][0] = Arrays.toString(progression);
+            questionsAndRightAnswer[i][0] = questionsAndRightAnswer[i][0].replace(",", "");
+            questionsAndRightAnswer[i][0] = questionsAndRightAnswer[i][0].replace("[", "");
+            questionsAndRightAnswer[i][0] = questionsAndRightAnswer[i][0].replace("]", "");
         }
 
-        Engine.gameLogic(requirement, questions, rightAnswers);
+        Engine.gameLogic(requirement, questionsAndRightAnswer);
     }
 
     public static String[] progressionBuilder(int lengthProgression, int elementProgression, int stepProgression) {
