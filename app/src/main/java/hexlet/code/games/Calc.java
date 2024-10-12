@@ -18,15 +18,11 @@ public class Calc {
             firstNumber = RandomUtils.nextInt(0, maxOperand);
             secondNumber = RandomUtils.nextInt(0, maxOperand);
             int usedOperator = RandomUtils.nextInt(0, lastOperator);
-            questionsAndRightAnswer[i][0] = buildQuestion(operators[usedOperator], firstNumber, secondNumber);
+            questionsAndRightAnswer[i][0] = firstNumber + operators[usedOperator] + secondNumber;
             questionsAndRightAnswer[i][1] = String.valueOf(calculateAnswer(operators[usedOperator],
                     firstNumber, secondNumber));
         }
         Engine.gameLogic(requirement, questionsAndRightAnswer);
-    }
-
-    public static String buildQuestion(String operator, int firstNumber, int secondNumber) {
-        return firstNumber + operator + secondNumber;
     }
 
     public static int calculateAnswer(String operator, int firstNumber, int secondNumber) {
