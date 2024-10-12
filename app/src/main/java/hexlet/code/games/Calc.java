@@ -34,7 +34,7 @@ public class Calc {
             case " + " -> firstNumber + secondNumber;
             case " - " -> firstNumber - secondNumber;
             case " * " -> firstNumber * secondNumber;
-            default -> throw new Error("Something went wrong!");
+            default -> throw new RuntimeException("Something went wrong!");
         };
     }
 }
