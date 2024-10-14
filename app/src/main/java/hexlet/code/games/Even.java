@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Even {
-    public static void even() {
+    public static void run() {
 
         String[][] questionsAndRightAnswer = new String[Engine.COUNT_OF_ROUNDS][2];
         final int maxNumber = 100;
@@ -17,7 +17,7 @@ public class Even {
             questionsAndRightAnswer[i][1] = isEven(randomNumber) ? "yes" : "no";
 
         }
-        Engine.gameLogic(requirement, questionsAndRightAnswer);
+        Engine.run(requirement, questionsAndRightAnswer);
 
     }
 

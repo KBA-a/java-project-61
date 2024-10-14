@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Prime {
-    public static void prime()  {
+    public static void run()  {
 
         String[][] questionsAndRightAnswer = new String[Engine.COUNT_OF_ROUNDS][2];
         int number;
@@ -21,7 +21,7 @@ public class Prime {
                 questionsAndRightAnswer[i][1] = "no";
             }
         }
-        Engine.gameLogic(requirement, questionsAndRightAnswer);
+        Engine.run(requirement, questionsAndRightAnswer);
     }
 
     private static boolean isPrime(int number) {

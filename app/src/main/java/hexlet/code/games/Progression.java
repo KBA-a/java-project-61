@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Progression {
-    public static void progression() {
+    public static void run() {
 
         String[][] questionsAndRightAnswer = new String[Engine.COUNT_OF_ROUNDS][2];
         final int maxLengthProgression = 15;
@@ -21,17 +21,17 @@ public class Progression {
             int stepProgression = RandomUtils.nextInt(minStepProgression, maxStepProgression);
             int skippedElement = RandomUtils.nextInt(1, lengthProgression);
             int elementProgression = RandomUtils.nextInt(minFirstElementProgression, maxFirstElementProgression);
-            String[] progression = progressionBuilder(lengthProgression, elementProgression, stepProgression);
+            String[] progression = getProgression(lengthProgression, elementProgression, stepProgression);
 
             questionsAndRightAnswer[i][1] = progression[skippedElement - 1];
             progression[skippedElement - 1] = "..";
             questionsAndRightAnswer[i][0] = String.join(" ", progression);
         }
 
-        Engine.gameLogic(requirement, questionsAndRightAnswer);
+        Engine.run(requirement, questionsAndRightAnswer);
     }
 
-    private static String[] progressionBuilder(int lengthProgression, int elementProgression, int stepProgression) {
+    private static String[] getProgression(int lengthProgression, int elementProgression, int stepProgression) {
         String[] questions = new String[lengthProgression];
         for (int j = 0; j < lengthProgression; j++) {
             questions[j] = String.valueOf(elementProgression + stepProgression * j);

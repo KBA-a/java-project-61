@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Calc {
-    public static void calc() {
+    public static void run() {
 
         String[][] questionsAndRightAnswer = new String[Engine.COUNT_OF_ROUNDS][2];
         String[] operators = new String[]{" + ", " - ", " * "};
@@ -22,7 +22,7 @@ public class Calc {
             questionsAndRightAnswer[i][1] = String.valueOf(calculateAnswer(operators[usedOperator],
                     firstNumber, secondNumber));
         }
-        Engine.gameLogic(requirement, questionsAndRightAnswer);
+        Engine.run(requirement, questionsAndRightAnswer);
     }
 
     private static int calculateAnswer(String operator, int firstNumber, int secondNumber) {

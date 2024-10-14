@@ -6,7 +6,7 @@ public class Engine {
 
     public static final byte COUNT_OF_ROUNDS = 3;
 
-    public static void gameLogic(String requirement, String[][] questionsAndRightAnswer) {
+    public static void run(String requirement, String[][] questionsAndRightAnswer) {
 
         Scanner input = new Scanner(System.in);
         String usersAnswer;

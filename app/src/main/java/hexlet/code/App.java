@@ -26,11 +26,11 @@ class App {
         String choiceOfGame = input.nextLine();
         switch (choiceOfGame) {
             case "1" -> Cli.userGreeting();
-            case "2" -> Even.even();
-            case "3" -> Calc.calc();
-            case "4" -> GCD.gcd();
-            case "5" -> Progression.progression();
-            case "6" -> Prime.prime();
+            case "2" -> Even.run();
+            case "3" -> Calc.run();
+            case "4" -> GCD.run();
+            case "5" -> Progression.run();
+            case "6" -> Prime.run();
             case "0" -> {
             }
             default -> System.out.println("You entered something wrong. Try again!");
