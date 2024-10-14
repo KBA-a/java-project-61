@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
-import java.util.Arrays;
-
 public class Progression {
     public static void progression() {
 
@@ -27,10 +25,7 @@ public class Progression {
 
             questionsAndRightAnswer[i][1] = progression[skippedElement - 1];
             progression[skippedElement - 1] = "..";
-            questionsAndRightAnswer[i][0] = Arrays.toString(progression);
-            questionsAndRightAnswer[i][0] = questionsAndRightAnswer[i][0].replace(",", "");
-            questionsAndRightAnswer[i][0] = questionsAndRightAnswer[i][0].replace("[", "");
-            questionsAndRightAnswer[i][0] = questionsAndRightAnswer[i][0].replace("]", "");
+            questionsAndRightAnswer[i][0] = String.join(" ", progression);
         }
 
         Engine.gameLogic(requirement, questionsAndRightAnswer);
