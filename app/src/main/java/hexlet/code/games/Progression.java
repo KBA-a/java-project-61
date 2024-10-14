@@ -31,7 +31,7 @@ public class Progression {
         Engine.gameLogic(requirement, questionsAndRightAnswer);
     }
 
-    public static String[] progressionBuilder(int lengthProgression, int elementProgression, int stepProgression) {
+    private static String[] progressionBuilder(int lengthProgression, int elementProgression, int stepProgression) {
         String[] questions = new String[lengthProgression];
         for (int j = 0; j < lengthProgression; j++) {
             questions[j] = String.valueOf(elementProgression + stepProgression * j);

@@ -25,7 +25,7 @@ public class Calc {
         Engine.gameLogic(requirement, questionsAndRightAnswer);
     }
 
-    public static int calculateAnswer(String operator, int firstNumber, int secondNumber) {
+    private static int calculateAnswer(String operator, int firstNumber, int secondNumber) {
         return switch (operator) {
             case " + " -> firstNumber + secondNumber;
             case " - " -> firstNumber - secondNumber;

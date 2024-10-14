@@ -21,7 +21,7 @@ public class GCD {
         Engine.gameLogic(requirement, questionsAndRightAnswer);
     }
 
-    public static int searchingGSD(int firstNumber, int secondNumber) {
+    private static int searchingGSD(int firstNumber, int secondNumber) {
         while (firstNumber != 0 && secondNumber != 0) {
             if (firstNumber > secondNumber) {
                 firstNumber = firstNumber % secondNumber;

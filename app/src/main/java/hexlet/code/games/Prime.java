@@ -24,7 +24,7 @@ public class Prime {
         Engine.gameLogic(requirement, questionsAndRightAnswer);
     }
 
-    public static boolean isPrime(int number) {
+    private static boolean isPrime(int number) {
         final int startNumberSearching = 3;
         if (number < 2) {
             return false;
