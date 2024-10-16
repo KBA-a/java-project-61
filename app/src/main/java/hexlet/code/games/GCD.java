@@ -16,12 +16,12 @@ public class GCD {
             int secondNumber = RandomUtils.nextInt(0, maxNumber);
 
             questionsAndRightAnswer[i][0] = firstNumber + " " + secondNumber;
-            questionsAndRightAnswer[i][1] = getGSD(firstNumber, secondNumber) + "";
+            questionsAndRightAnswer[i][1] = getGСD(firstNumber, secondNumber) + "";
         }
         Engine.run(requirement, questionsAndRightAnswer);
     }
 
-    private static int getGSD(int firstNumber, int secondNumber) {
+    private static int getGСD(int firstNumber, int secondNumber) {
         while (firstNumber != 0 && secondNumber != 0) {
             if (firstNumber > secondNumber) {
                 firstNumber = firstNumber % secondNumber;
